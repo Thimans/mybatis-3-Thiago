@@ -23,6 +23,9 @@ import static org.mockito.Mockito.when;
 import java.sql.Connection;
 import java.sql.SQLXML;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import org.apache.ibatis.BaseDataTest;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Select;
@@ -172,26 +175,12 @@ class SqlxmlTypeHandlerTest extends BaseTypeHandlerTest {
     @Insert("insert into mbtest.test_sqlxml (id, content) values (#{id}, #{content,jdbcType=SQLXML})")
     void insert(XmlBean bean);
   }
-
+@Getter
+@Setter
   public static class XmlBean {
     private Integer id;
 
     private String content;
 
-    public Integer getId() {
-      return id;
-    }
 
-    public void setId(Integer id) {
-      this.id = id;
-    }
-
-    public String getContent() {
-      return content;
-    }
-
-    public void setContent(String content) {
-      this.content = content;
-    }
-  }
 }
