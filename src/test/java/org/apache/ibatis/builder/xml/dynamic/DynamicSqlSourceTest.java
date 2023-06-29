@@ -26,6 +26,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import lombok.AllArgsConstructor;
+
 import org.apache.ibatis.BaseDataTest;
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.mapping.BoundSql;
@@ -361,20 +363,14 @@ class DynamicSqlSourceTest extends BaseDataTest {
     Assertions.assertEquals("id=", sql);
   }
 
+  @AllArgsConstructor
+  @Getter
+  @Setter
+
   public static class Bean {
     public String id;
 
-    Bean(String property) {
-      this.id = property;
-    }
 
-    public String getId() {
-      return id;
-    }
 
-    public void setId(String property) {
-      this.id = property;
-    }
-  }
 
 }
