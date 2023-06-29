@@ -18,11 +18,15 @@ package org.apache.ibatis.submitted.global_variables_defaults;
 import java.lang.reflect.Field;
 import java.util.Properties;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import org.apache.ibatis.cache.Cache;
 import org.apache.ibatis.cache.impl.PerpetualCache;
 import org.apache.ibatis.reflection.factory.DefaultObjectFactory;
 
 public class SupportClasses {
+
 
   public static class CustomObjectFactory extends DefaultObjectFactory {
     private static final long serialVersionUID = 4576592418878031661L;
@@ -38,19 +42,13 @@ public class SupportClasses {
     }
   }
 
+  @Getter
+  @Setter
   public static class CustomCache extends PerpetualCache {
     private String name;
 
     public CustomCache(String id) {
       super(id);
-    }
-
-    public String getName() {
-      return name;
-    }
-
-    public void setName(String name) {
-      this.name = name;
     }
   }
 
