@@ -27,6 +27,8 @@ import java.util.List;
 import java.util.Map;
 
 import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.Setter;
 
 import org.apache.ibatis.BaseDataTest;
 import org.apache.ibatis.io.Resources;
@@ -366,11 +368,7 @@ class DynamicSqlSourceTest extends BaseDataTest {
   @AllArgsConstructor
   @Getter
   @Setter
-
   public static class Bean {
     public String id;
-
-
-
-
+  }
 }

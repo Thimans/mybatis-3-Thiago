@@ -175,12 +175,12 @@ class SqlxmlTypeHandlerTest extends BaseTypeHandlerTest {
     @Insert("insert into mbtest.test_sqlxml (id, content) values (#{id}, #{content,jdbcType=SQLXML})")
     void insert(XmlBean bean);
   }
-@Getter
-@Setter
+
+  @Getter
+  @Setter
   public static class XmlBean {
     private Integer id;
 
     private String content;
-
-
+  }
 }

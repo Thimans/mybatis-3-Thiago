@@ -18,6 +18,8 @@ package org.apache.ibatis.cache.decorators;
 import java.util.Deque;
 import java.util.LinkedList;
 
+import lombok.Setter;
+
 import org.apache.ibatis.cache.Cache;
 
 /**
@@ -29,6 +31,8 @@ public class FifoCache implements Cache {
 
   private final Cache delegate;
   private final Deque<Object> keyList;
+  
+  @Setter
   private int size;
 
   public FifoCache(Cache delegate) {
@@ -45,10 +49,6 @@ public class FifoCache implements Cache {
   @Override
   public int getSize() {
     return delegate.getSize();
-  }
-
-  public void setSize(int size) {
-    this.size = size;
   }
 
   @Override
